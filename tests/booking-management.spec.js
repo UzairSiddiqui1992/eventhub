@@ -14,7 +14,7 @@ async function login(page) {
   // Home page loads after login — "Browse Events →" link confirms successful auth
   await expect(page.getByRole('link', { name: /Browse Events/i }).first()).toBeVisible();
 }
-//comments added
+//comments added..
 /**
  * Books the first available (non-sold-out) event on the events page.
  * Returns { bookingRef, eventTitle } from the confirmation card.
