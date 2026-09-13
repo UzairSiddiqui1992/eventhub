@@ -23,11 +23,10 @@ jobs:
 
       - name: Run Playwright tests inside Docker
         run: |
+          mkdir -p playwright-report
           docker run --rm \
-            -v "${{ github.workspace }}:/app" \
-            -w /app \
-            eventhub-playwright \
-            bash -lc "npm ci && npx playwright test --reporter=html,line"
+            -v "${{ github.workspace }}/playwright-report:/app/playwright-report" \
+            eventhub-playwright
 
       - name: Upload Playwright HTML report
         if: ${{ !cancelled() }}
