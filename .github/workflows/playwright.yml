@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - docker-github-actions
   workflow_dispatch:
 
 permissions:
